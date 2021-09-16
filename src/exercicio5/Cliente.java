@@ -1,19 +1,23 @@
 package exercicio5;
 
 public class Cliente {
-    private int id = 0;
+    private int id = geraID();
     private String nome, cpf, endereco, email, telefone;
 
     public Cliente() {
     }
 
     public Cliente(String nome, String cpf, String endereco, String email, String telefone) {
-        this.setId(id+1);
         this.nome = nome;
         this.cpf = cpf;
         this.endereco = endereco;
         this.email = email;
         this.telefone = telefone;
+    }
+    public int geraID(){
+       double idRamdom=  Math.random()*1000;
+        int idNumber = (int) idRamdom;
+        return idNumber;
     }
     public boolean validaNome(String nome){
         if(nome.length() >=3 && nome.length() <=50){
@@ -43,13 +47,6 @@ public class Cliente {
             return false;
         }
     }
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -61,6 +58,14 @@ public class Cliente {
 
     public String getCpf() {
         return cpf;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setCpf(String cpf) {
