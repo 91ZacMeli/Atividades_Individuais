@@ -8,9 +8,7 @@ import java.util.List;
 public class ClasssePrincipalEx4 {
     public static void main(String[] args) {
         List<Pessoa> pessoas = new ArrayList<>();
-        PessoaDAO pessoaDAO= new PessoaDAO("pessoas.txt");
         ManipulaArquivos arquivoManipulavel = new ManipulaArquivos(new File("arquivo.txt"));
-
 
         Pessoa isac = new Pessoa("Isac","30 anos");
         Pessoa carla = new Pessoa("Carla","32 anos");
@@ -26,6 +24,7 @@ public class ClasssePrincipalEx4 {
         pessoas.forEach( p -> {
             try {
                 arquivoManipulavel.escreveObjetoArquivoTexto(p);
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -38,7 +37,5 @@ public class ClasssePrincipalEx4 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-
     }
 }
